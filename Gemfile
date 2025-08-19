@@ -1,23 +1,20 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~>5.0.7.0'
-gem 'sqlite3', '~>1.3.6'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'bootsnap'
-gem 'sassc'
-gem "actionview", ">= 5.0.7.2"
+gem 'rails', '~> 7.1.0'
+gem 'sqlite3', '~> 1.4'
+gem 'puma', '~> 6.0'
+gem 'sprockets-rails'
+gem 'jbuilder', '~> 2.11'
+gem 'bootsnap', '>= 1.4.4', require: false
+gem 'warnings'
 
 group :development, :test do
   gem 'pry'
   gem 'capybara'
-  gem 'rspec-rails'
-  gem 'shoulda'
+  gem 'rspec-rails', '~> 6.0'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 4.2'
 end
-

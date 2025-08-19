@@ -43,3 +43,15 @@ jspm_packages
 /log/*
 !/log/.keep
 /tmp
+
+# Rails 7.1 specific
+/config/master.key
+/config/credentials/*.key
+/storage/*
+!/storage/.keep
+/tmp/*
+!/tmp/.keep
+/coverage/
+/public/assets
+.byebug_history
+config/master.key
