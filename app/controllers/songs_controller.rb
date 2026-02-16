@@ -23,6 +23,8 @@ class SongsController < ApplicationController
   end
 
   def new
+    return redirect_to songs_path unless Preference.song_enabled?
+
     @song = Song.new
   end
 
