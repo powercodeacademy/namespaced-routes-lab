@@ -1,0 +1,7 @@
+<h1>Preferences</h1>
+<ul>
+  <% @preferences.each do |pref| %>
+    <li>Create songs: <%= pref.allow_create_songs %></li>
+    <li>Create artists: <%= pref.allow_create_artists %></li>
+  <% end %>
+</ul>
