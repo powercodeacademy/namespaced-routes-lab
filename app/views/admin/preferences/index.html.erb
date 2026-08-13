@@ -1,0 +1,8 @@
+<h1>Admin Preferences</h1>
+
+<% if @preference %>
+  <p>Allow create artists: <%= @preference.allow_create_artists %></p>
+  <p>Allow create songs: <%= @preference.allow_create_songs %></p>
+<% else %>
+  <p>No preferences set. Run <code>bin/rails preferences:load</code> to seed defaults.</p>
+<% end %>
