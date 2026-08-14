@@ -1,0 +1,4 @@
+class Preference < ApplicationRecord
+
+  
+end

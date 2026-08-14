@@ -1,4 +1,6 @@
 class ArtistsController < ApplicationController
+  before_action :ensure_artist_creation_allowed, only: [:new, :create]
+
   def index
     @artists = Artist.all
   end
@@ -28,9 +30,7 @@ class ArtistsController < ApplicationController
   def update
     @artist = Artist.find(params[:id])
 
-    @artist.update(artist_params)
-
-    if @artist.save
+    if @artist.update(artist_params)
       redirect_to @artist
     else
       render :edit
@@ -40,11 +40,19 @@ class ArtistsController < ApplicationController
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy
-    flash[:notice] = 'Artist deleted.'
+    flash[:notice] = "Artist deleted."
     redirect_to artists_path
   end
 
   private
+
+  def ensure_artist_creation_allowed
+    preference = Preference.first
+
+    return if preference&.allow_create_artists
+
+    redirect_to artists_path, alert: "Artist creation is disabled."
+  end
 
   def artist_params
     params.require(:artist).permit(:name)
