@@ -1,0 +1,8 @@
+<h1>Admin Preferences</h1>
+
+<% if @preference %>
+  <p>Allow creating songs: <%= @preference.allow_create_songs %></p>
+  <p>Allow creating artists: <%= @preference.allow_create_artists %></p>
+<% else %>
+  <p>No preferences have been set yet.</p>
+<% end %>
